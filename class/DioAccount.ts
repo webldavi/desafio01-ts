@@ -44,7 +44,7 @@ export abstract class DioAccount {
     return this.balance;
   }
 
-  private validateStatus = (): boolean => {
+  public validateStatus = (): boolean => {
     if (this.status) {
       return this.status
     }
