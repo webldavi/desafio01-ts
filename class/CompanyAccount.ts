@@ -8,10 +8,10 @@ export class CompanyAccount extends DioAccount {
   }
 
   getLoan = (userAccount: PeopleAccount, value: number): void => {
-    if (userAccount.validateStatus()) {
+    try {
       userAccount.deposit(value)
-    } else {
-      console.log("Você não está autorizado a fazer este emprestimo")
+    } catch (error) {
+      console.log("Você não tem autorização para fazer emprestimos")
     }
   }
 }
